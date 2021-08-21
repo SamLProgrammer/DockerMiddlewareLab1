@@ -23,11 +23,11 @@ app.listen(port, () => {
 })
 
 function yourFunction(){
-  shell.exec('/home/debian/pinger.sh')
+  shell.exec('/home/debian/DockerMiddleWareLab1/pinger.sh')
   let fs  = require("fs");
-  let array1 = fs.readFileSync('/home/debian/LAB1SDMIDDLWARE/last_debian0_ping.txt').toString().split('\n');
+  let array1 = fs.readFileSync('/home/debian/DockerMiddleWareLab1/last_debian0_ping.txt').toString().split('\n');
   server1State = array1[0].split(' ')[0];
-  let array2 = fs.readFileSync('/home/debian/LAB1SDMIDDLWARE/last_debian1_ping.txt').toString().split('\n');
+  let array2 = fs.readFileSync('/home/debian/DockerMiddleWareLab1/last_debian1_ping.txt').toString().split('\n');
   server2State = array2[0].split(' ')[0];
   setTimeout(yourFunction, 2000);
 }
