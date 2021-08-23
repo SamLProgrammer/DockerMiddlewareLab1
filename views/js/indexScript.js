@@ -6,6 +6,7 @@ window.onload = function () {
 }
 
 function requestUpdate(button1, button2) {
+    alert('em aja')
     const xhr = new XMLHttpRequest();
     xhr.open("GET", 'http://192.168.100.10:4000/refresh', true);
     xhr.onreadystatechange = function () {
