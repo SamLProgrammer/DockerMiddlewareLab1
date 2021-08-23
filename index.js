@@ -14,7 +14,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/refresh', (req, res) => {
-  console.log(JSON.stringify({ server: 'server1', status: server1State}))
   res.send([{ server: 'server1', status: server1State}, {server: 'server2', status: server2State}])
 })
 
@@ -29,6 +28,8 @@ function yourFunction(){
   server1State = array1[0].split(' ')[0];
   let array2 = fs.readFileSync('/home/debian/DockerMiddlewareLab1/last_server1_ping.txt').toString().split('\n');
   server2State = array2[0].split(' ')[0];
+  console.log(JSON.stringify({ server: 'server1', status: server1State}))
+  console.log(JSON.stringify({ server: 'server2', status: server2State}))
   setTimeout(yourFunction, 2000);
 }
 
