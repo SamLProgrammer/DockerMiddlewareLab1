@@ -8,7 +8,7 @@ window.onload = function () {
 function requestUpdate(button1, button2) {
     alert('em aja')
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", 'http://192.168.100.10:4000/refresh', true);
+    xhr.open("GET", 'http://localhost:8000/refresh', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             const resp = JSON.parse(xhr.response);
