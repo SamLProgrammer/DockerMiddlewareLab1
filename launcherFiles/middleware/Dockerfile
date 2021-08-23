@@ -26,5 +26,6 @@ COPY ./ /home/debian
 RUN git init
 RUN git clone --branch another https://github.com/SamLProgrammer/DockerMiddlewareLab1.git
 WORKDIR /home/debian/DockerMiddlewareLab1
+RUN chmod +x pinger.sh
 RUN npm install
 CMD ["node", "index.js"]
