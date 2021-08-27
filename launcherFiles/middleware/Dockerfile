@@ -18,7 +18,6 @@ FROM node
 ENV TZ=America/Bogota
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update
-RUN apt-get upgrade
 WORKDIR /home/debian
 COPY ./ /home/debian
 RUN git init

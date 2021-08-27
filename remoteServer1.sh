@@ -1,0 +1,1 @@
+sshpass -p "" ssh root@172.18.0.3 < restartServer1.sh
