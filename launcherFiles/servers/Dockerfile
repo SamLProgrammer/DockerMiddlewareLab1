@@ -16,8 +16,10 @@ ENV TZ=America/Bogota
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update
 # RUN apk add --update --no-cache openssh
-RUN apt install openssh-server -y
-RUN service ssh start
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+RUN apt-get install -y openssh-server
+ENTRYPOINT ["sh", "/docker-entrypoint.sh"]
 WORKDIR /home/debian
 COPY ./ /home/debian
 RUN git init
